@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2014-present, Facebook, Inc.
+ * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
@@ -25,7 +25,7 @@ let didWarn = false;
 let didError = false;
 
 const files = glob
-  .sync('**/*.js', {ignore: '**/node_modules/**'})
+  .sync('**/*.js', {ignore: ['**/node_modules/**', '**/cjs/**']})
   .filter(f => !onlyChanged || changedFiles.has(f));
 
 if (!files.length) {

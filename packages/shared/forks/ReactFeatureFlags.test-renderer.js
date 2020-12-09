@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2013-present, Facebook, Inc.
+ * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
@@ -7,28 +7,57 @@
  * @flow
  */
 
-import invariant from 'fbjs/lib/invariant';
-
 import typeof * as FeatureFlagsType from 'shared/ReactFeatureFlags';
-import typeof * as PersistentFeatureFlagsType from './ReactFeatureFlags.persistent';
+import typeof * as ExportsType from './ReactFeatureFlags.test-renderer';
 
-export const debugRenderPhaseSideEffects = false;
 export const debugRenderPhaseSideEffectsForStrictMode = false;
-export const enableUserTimingAPI = __DEV__;
-export const enableGetDerivedStateFromCatch = false;
-export const warnAboutDeprecatedLifecycles = false;
+export const enableDebugTracing = false;
+export const enableSchedulingProfiler = false;
+export const warnAboutDeprecatedLifecycles = true;
 export const replayFailedUnitOfWorkWithInvokeGuardedCallback = false;
-export const enableMutatingReconciler = true;
-export const enableNoopReconciler = false;
-export const enablePersistentReconciler = false;
+export const enableProfilerTimer = __PROFILE__;
+export const enableProfilerCommitHooks = false;
+export const enableProfilerNestedUpdatePhase = false;
+export const enableProfilerNestedUpdateScheduledHook = false;
+export const enableSchedulerTracing = __PROFILE__;
+export const enableSuspenseServerRenderer = false;
+export const enableSelectiveHydration = false;
+export const enableLazyElements = false;
+export const enableCache = false;
+export const disableJavaScriptURLs = false;
+export const disableInputAttributeSyncing = false;
+export const enableSchedulerDebugging = false;
+export const enableFundamentalAPI = false;
+export const enableScopeAPI = false;
+export const enableCreateEventHandleAPI = false;
+export const warnAboutUnmockedScheduler = false;
+export const enableSuspenseCallback = false;
+export const warnAboutDefaultPropsOnFunctionComponents = false;
+export const warnAboutStringRefs = false;
+export const disableLegacyContext = false;
+export const disableSchedulerTimeoutBasedOnReactExpirationTime = false;
+export const enableTrustedTypesIntegration = false;
+export const disableTextareaChildren = false;
+export const disableModulePatternComponents = false;
+export const warnUnstableRenderSubtreeIntoContainer = false;
+export const warnAboutSpreadingKeyToJSX = false;
+export const enableComponentStackLocations = true;
+export const enableLegacyFBSupport = false;
+export const enableFilterEmptyStringAttributesDOM = false;
+export const disableNativeComponentFrames = false;
 
-// Only used in www builds.
-export function addUserTimingListener() {
-  invariant(false, 'Not implemented.');
-}
+export const enableNewReconciler = false;
+export const deferRenderPhaseUpdateToNextBatch = true;
+export const decoupleUpdatePriorityFromScheduler = false;
+export const enableDiscreteEventFlushingChange = false;
+
+export const enableDoubleInvokingEffects = false;
+export const enableUseRefAccessWarning = false;
+
+export const enableRecursiveCommitTraversal = false;
 
 // Flow magic to verify the exports of this file match the original version.
 // eslint-disable-next-line no-unused-vars
 type Check<_X, Y: _X, X: Y = _X> = null;
 // eslint-disable-next-line no-unused-expressions
-(null: Check<PersistentFeatureFlagsType, FeatureFlagsType>);
+(null: Check<ExportsType, FeatureFlagsType>);
